@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryram123",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac887f74-6850-496f-acad-01444fa629ea",
+		"tenantId": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+	}
+}
