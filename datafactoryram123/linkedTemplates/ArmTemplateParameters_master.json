@@ -1,0 +1,84 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryram123"
+		},
+		"AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDBlinkedservice_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"SparkBlobStorage_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"linkedService2_clusterPassword": {
+			"value": ""
+		},
+		"linkedService2_clusterSshPassword": {
+			"value": ""
+		},
+		"linkedService2_servicePrincipalKey": {
+			"value": ""
+		},
+		"sparkhdinsitelinkservice_clusterPassword": {
+			"value": ""
+		},
+		"sparkhdinsitelinkservice_clusterSshPassword": {
+			"value": ""
+		},
+		"sparkhdinsitelinkservice_servicePrincipalKey": {
+			"value": ""
+		},
+		"linkedService2_properties_typeProperties_hostSubscriptionId": {
+			"value": "af17ad7a-081e-498d-93d1-75d47baca836"
+		},
+		"linkedService2_properties_typeProperties_clusterResourceGroup": {
+			"value": "ramyadavITC"
+		},
+		"linkedService2_properties_typeProperties_servicePrincipalId": {
+			"value": "123"
+		},
+		"linkedService2_properties_typeProperties_tenant": {
+			"value": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_hostSubscriptionId": {
+			"value": "af17ad7a-081e-498d-93d1-75d47baca836"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterResourceGroup": {
+			"value": "ramyadavITC"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_servicePrincipalId": {
+			"value": "7347"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_tenant": {
+			"value": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterUserName": {
+			"value": "ramyadav"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterSshUserName": {
+			"value": "ramyadav"
+		},
+		"AzureSqlDatabaseendpoint_properties_privateLinkResourceId": {
+			"value": "/subscriptions/af17ad7a-081e-498d-93d1-75d47baca836/resourceGroups/ramyadavITC/providers/Microsoft.Sql/servers/sqldbserverram"
+		},
+		"AzureSqlDatabaseendpoint_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

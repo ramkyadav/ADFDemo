@@ -1,0 +1,203 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactoryram123"
+		},
+		"AzureBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage'"
+		},
+		"AzureSqlDBlinkedservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDBlinkedservice'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"SparkBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SparkBlobStorage'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"linkedService2_clusterPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterPassword' of 'linkedService2'"
+		},
+		"linkedService2_clusterSshPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterSshPassword' of 'linkedService2'"
+		},
+		"linkedService2_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService2'"
+		},
+		"sparkhdinsitelinkservice_clusterPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterPassword' of 'sparkhdinsitelinkservice'"
+		},
+		"sparkhdinsitelinkservice_clusterSshPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterSshPassword' of 'sparkhdinsitelinkservice'"
+		},
+		"sparkhdinsitelinkservice_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'sparkhdinsitelinkservice'"
+		},
+		"linkedService2_properties_typeProperties_hostSubscriptionId": {
+			"type": "string",
+			"defaultValue": "af17ad7a-081e-498d-93d1-75d47baca836"
+		},
+		"linkedService2_properties_typeProperties_clusterResourceGroup": {
+			"type": "string",
+			"defaultValue": "ramyadavITC"
+		},
+		"linkedService2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "123"
+		},
+		"linkedService2_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_hostSubscriptionId": {
+			"type": "string",
+			"defaultValue": "af17ad7a-081e-498d-93d1-75d47baca836"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterResourceGroup": {
+			"type": "string",
+			"defaultValue": "ramyadavITC"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "7347"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterUserName": {
+			"type": "string",
+			"defaultValue": "ramyadav"
+		},
+		"sparkhdinsitelinkservice_properties_typeProperties_clusterSshUserName": {
+			"type": "string",
+			"defaultValue": "ramyadav"
+		},
+		"AzureSqlDatabaseendpoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/af17ad7a-081e-498d-93d1-75d47baca836/resourceGroups/ramyadavITC/providers/Microsoft.Sql/servers/sqldbserverram"
+		},
+		"AzureSqlDatabaseendpoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactoryram123_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage_connectionString": {
+						"value": "[parameters('AzureBlobStorage_connectionString')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
+					},
+					"AzureSqlDBlinkedservice_connectionString": {
+						"value": "[parameters('AzureSqlDBlinkedservice_connectionString')]"
+					},
+					"SparkBlobStorage_connectionString": {
+						"value": "[parameters('SparkBlobStorage_connectionString')]"
+					},
+					"linkedService2_clusterPassword": {
+						"value": "[parameters('linkedService2_clusterPassword')]"
+					},
+					"linkedService2_clusterSshPassword": {
+						"value": "[parameters('linkedService2_clusterSshPassword')]"
+					},
+					"linkedService2_servicePrincipalKey": {
+						"value": "[parameters('linkedService2_servicePrincipalKey')]"
+					},
+					"sparkhdinsitelinkservice_clusterPassword": {
+						"value": "[parameters('sparkhdinsitelinkservice_clusterPassword')]"
+					},
+					"sparkhdinsitelinkservice_clusterSshPassword": {
+						"value": "[parameters('sparkhdinsitelinkservice_clusterSshPassword')]"
+					},
+					"sparkhdinsitelinkservice_servicePrincipalKey": {
+						"value": "[parameters('sparkhdinsitelinkservice_servicePrincipalKey')]"
+					},
+					"AzureSqlDatabaseendpoint_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureSqlDatabaseendpoint_properties_privateLinkResourceId')]"
+					},
+					"AzureSqlDatabaseendpoint_properties_groupId": {
+						"value": "[parameters('AzureSqlDatabaseendpoint_properties_groupId')]"
+					},
+					"linkedService2_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('linkedService2_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"linkedService2_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('linkedService2_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"linkedService2_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('linkedService2_properties_typeProperties_servicePrincipalId')]"
+					},
+					"linkedService2_properties_typeProperties_tenant": {
+						"value": "[parameters('linkedService2_properties_typeProperties_tenant')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_servicePrincipalId')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_tenant": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_tenant')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_clusterUserName": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_clusterUserName')]"
+					},
+					"sparkhdinsitelinkservice_properties_typeProperties_clusterSshUserName": {
+						"value": "[parameters('sparkhdinsitelinkservice_properties_typeProperties_clusterSshUserName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
