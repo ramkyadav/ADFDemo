@@ -1,0 +1,65 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactoryram123"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/sparkhdinsitelinkservice')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HDInsightOnDemand",
+				"typeProperties": {
+					"clusterType": "spark",
+					"clusterSize": 2,
+					"timeToLive": "00:15:00",
+					"version": "4.0",
+					"hostSubscriptionId": "af17ad7a-081e-498d-93d1-75d47baca836",
+					"clusterResourceGroup": "ramyadavITC",
+					"servicePrincipalId": "7347",
+					"osType": "Linux",
+					"tenant": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35",
+					"clusterNamePrefix": "",
+					"clusterUserName": "ramyadav",
+					"clusterPassword": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"clusterSshUserName": "ramyadav",
+					"clusterSshPassword": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"sparkVersion": "",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"additionalLinkedServiceNames": [],
+					"linkedServiceName": {
+						"referenceName": "SparkBlobStorage",
+						"type": "LinkedServiceReference"
+					},
+					"headNodeSize": "",
+					"dataNodeSize": "",
+					"zookeeperNodeSize": ""
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
