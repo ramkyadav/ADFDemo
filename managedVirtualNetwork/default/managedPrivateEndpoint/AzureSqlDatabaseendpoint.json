@@ -1,0 +1,7 @@
+{
+	"name": "AzureSqlDatabaseendpoint",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/af17ad7a-081e-498d-93d1-75d47baca836/resourceGroups/ramyadavITC/providers/Microsoft.Sql/servers/sqldbserverram",
+		"groupId": "sqlServer"
+	}
+}
