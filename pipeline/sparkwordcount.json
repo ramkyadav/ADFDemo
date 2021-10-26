@@ -15,6 +15,14 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"rootPath": "adftutorial/spark/script",
+					"entryFilePath": "WordCount_Spark.py",
+					"sparkJobLinkedService": {
+						"referenceName": "SparkBlobStorage",
+						"type": "LinkedServiceReference"
+					}
+				},
 				"linkedServiceName": {
 					"referenceName": "sparkhdinsitelinkservice",
 					"type": "LinkedServiceReference"
